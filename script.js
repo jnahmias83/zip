@@ -5,6 +5,7 @@ function zip(str) {
   for (let i = 1; i < str.length; i++) {
     if (str[i] != str[i - 1]) letters.push(str[i]);
   }
+  
   return letters;
 }
 
