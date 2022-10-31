@@ -12,16 +12,20 @@ function zip(str) {
   
   function zipAdvanced(str) {
     let count = 1;
-    let letters = [[`'${str[0]}',${count}`]];
+    let letters; 
+    letters[0]= [[`'${str[0]}',${count}`]];
+
     for (let i = 1; i < str.length; i++) {
+      let count = 1;
       let index = 1;
-      if (str[i] != str[i-1]) {
-        count = 1;
-        index++;
+      if (str[i] == str[i-1]) {
+        count++;
         letters[index] = [`'${str[i]}',${count}`];
       } 
-      else if (str[i] == str[i-1]) {
-        letters[index] = [[`'${str[i - 1]}',${count++}`]];
+      else if (str[i] != str[i-1]) {
+        index++;
+        count = 1
+        letters[index] = [[`'${str[i}',${count}`]];
       }
     }
     return letters;
